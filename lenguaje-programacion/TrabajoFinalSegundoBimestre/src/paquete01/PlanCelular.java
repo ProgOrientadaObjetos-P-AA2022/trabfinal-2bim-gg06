@@ -58,8 +58,6 @@ public abstract class PlanCelular {
     public double obtenerPagoMensual(){
         return pagoMensual;
     }
-    
-    
     public String obtenerNombrePro() {
         return nombrePro;
     }

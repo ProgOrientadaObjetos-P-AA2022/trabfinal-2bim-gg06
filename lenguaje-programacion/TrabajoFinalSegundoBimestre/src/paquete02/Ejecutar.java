@@ -9,17 +9,16 @@ import java.util.Scanner;
 import paquete01.*;
 
 /**
- *
+ * @author Frank
  * @author maisc
  */
-
 public class Ejecutar {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
         
         BaseDatos c = new BaseDatos();
-        
+
         int op1;
         int op2;
         int op3;
@@ -192,9 +191,10 @@ public class Ejecutar {
             } catch (Exception e) {
                 System.out.println("Error. Ingrese una opcion validad.");
             }
-            System.out.println("Ingrese la letra 'X' para continuar.");
+            sc.nextLine();
+            System.out.println("Ingrese la letra ' X ' para continuar.");
             char salir = sc.nextLine().charAt(0);
-            if(salir ==  'X'){                 
+            if(salir ==  'X' ){
                 ojo = true;                     
             }else
                 ojo = false;

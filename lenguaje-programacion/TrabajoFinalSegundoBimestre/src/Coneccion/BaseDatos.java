@@ -22,7 +22,7 @@ public class BaseDatos {
     //Se coneccta a la base de datos...
     public void establecerConexion() {  
         try {
-            String url = "jdbc:sqlite:bd/planes.db.db";
+            String url = "jdbc:sqlite:/home/frank/Documentos/Programacion/2bimestre/trabfinal-2bim-gg06/lenguaje-programacion/TrabajoFinalSegundoBimestre/bd/planes.db.db";
             conn = DriverManager.getConnection(url);
         } catch (SQLException e) {  
             System.out.println(e.getMessage());  
@@ -32,10 +32,10 @@ public class BaseDatos {
         return conn;
     }
 
-    
+
     //Se insertan datos
     public void insertarPlanCelularPosPagoMegas(PlanPostPagoMegas plan) {  
-        try{  
+        try{
             establecerConexion();
             Statement statement = obtenerConexion().createStatement();
             String data = String.format("INSERT INTO planPostPagoMegas"
@@ -93,10 +93,7 @@ public class BaseDatos {
         return lista1;
     }
     
-    
-    
-    
-    
+
     //Se insertan datos
     public void insertarPostPagoMinutos(PlanPostPagoMinutos plan) {
         try {
@@ -254,10 +251,9 @@ public class BaseDatos {
                     plan.obtenerNumeroCelular(),
                     plan.obtenerMinutos(),
                     plan.obtenerCostoMinuto(),
-                     plan.obtenerMinutos(),
-                    plan.obtenerCostoMinuto(),
                     plan.obtenerMegasGigas(),
-                    plan.obtenerCostoGigas()
+                    plan.obtenerCostoGigas(),
+                    plan.obtenerDescuento()
             );
             System.out.println("\n");
             statement.executeUpdate(data);
